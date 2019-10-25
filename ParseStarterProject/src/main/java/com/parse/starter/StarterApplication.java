@@ -32,9 +32,9 @@ public class StarterApplication extends Application {
     //this connects to the parse instance
     Parse.initialize(new Parse.Configuration.Builder(getApplicationContext())
             //look for this info in terminal
-            .applicationId("")
-            .clientKey("") //masterKey
-            .server("") //add the / at the end of the url
+            .applicationId()
+            .clientKey() //masterKey
+            .server() //add the / at the end of the url
             .build()
     );
     //to log in and check this:
@@ -45,9 +45,7 @@ public class StarterApplication extends Application {
     //you'll probably want to change this to something more secure and easier to remember
 
 
-
-
-    //create some objects to put in the parse server, then try to get them and read them back
+    /*//create some objects to put in the parse server, then try to get them and read them back
     ParseObject object = new ParseObject("ExampleObject");
     object.put("myNumber", "123");
     object.put("myString", "rob");
@@ -61,7 +59,7 @@ public class StarterApplication extends Application {
           Log.i("Parse Result", "Failed" + ex.toString());
         }
       }
-    });
+    });*/
 
 
     ParseUser.enableAutomaticUser();
