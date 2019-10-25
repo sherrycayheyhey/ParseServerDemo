@@ -32,9 +32,9 @@ public class StarterApplication extends Application {
     //this connects to the parse instance
     Parse.initialize(new Parse.Configuration.Builder(getApplicationContext())
             //look for this info in terminal
-            .applicationId()
-            .clientKey() //masterKey
-            .server() //add the / at the end of the url
+            .applicationId("")
+            .clientKey("") //masterKey
+            .server("") //add the / at the end of the url
             .build()
     );
     //to log in and check this:
