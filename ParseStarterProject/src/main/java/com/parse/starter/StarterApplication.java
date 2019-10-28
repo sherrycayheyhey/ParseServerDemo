@@ -61,8 +61,8 @@ public class StarterApplication extends Application {
       }
     });*/
 
-
-    ParseUser.enableAutomaticUser();
+    //this is used when you want to not require a login but get back analytics
+    //ParseUser.enableAutomaticUser();
 
     ParseACL defaultACL = new ParseACL();
     defaultACL.setPublicReadAccess(true);

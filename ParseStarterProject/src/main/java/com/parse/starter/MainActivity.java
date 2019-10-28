@@ -25,6 +25,7 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
+import com.parse.SignUpCallback;
 
 import java.util.List;
 
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     });
     */
 
-    //CHALLENGE: If the user has more than 50 points, add 20 to their score
+    /*//CHALLENGE: If the user has more than 50 points, add 20 to their score
     ParseQuery<ParseObject> query = ParseQuery.getQuery("Score");
 
     //search for scores greater than 50
@@ -77,7 +78,54 @@ public class MainActivity extends AppCompatActivity {
             }
         }
       }
+    });*/
+
+
+    //****************************User Stuff****************************
+    /*
+    //creates the user
+    ParseUser user = new ParseUser();
+    user.setUsername("sherry");
+    user.setPassword("password");
+
+    user.signUpInBackground(new SignUpCallback() {
+      @Override
+      public void done(ParseException e) {
+        if (e == null) {
+          //everything was ok
+          Log.i("sign up ok!", "we did it");
+        } else {
+          e.printStackTrace();
+        }
+      }
     });
+    */
+
+    /*
+    //user login
+    ParseUser.logInInBackground("sherry", "password", new LogInCallback() {
+      @Override
+      public void done(ParseUser user, ParseException e) {
+        if (user != null) {
+          Log.i("woohoo", "you logged in!");
+        } else {
+            e.printStackTrace();
+        }
+      }
+    });
+    */
+
+    
+    //when the app launches, see if there's a logged in user
+    if (ParseUser.getCurrentUser() != null) {
+      Log.i("signed in", ParseUser.getCurrentUser().getUsername());
+    } else {
+      //this is where you would want to show the login or signup functionality
+      Log.i("didn't work", "not signed in");
+    }
+
+    //log out a user
+    //ParseUser.logOut();
 
     //allows us to check how much a user is using the app
     ParseAnalytics.trackAppOpenedInBackground(getIntent());
